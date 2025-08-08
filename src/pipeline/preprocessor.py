@@ -82,7 +82,10 @@ class DocumentPreprocessor:
                 
                 # Convert to PIL Image
                 img_data = pix.tobytes("ppm")
-                pil_image = Image.open(fitz.open("image", img_data))
+                
+                # Fix: Use BytesIO instead of fitz.open
+                import io
+                pil_image = Image.open(io.BytesIO(img_data))
                 
                 # Preprocess the image
                 processed_image = self._preprocess_image(pil_image)

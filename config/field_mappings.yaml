@@ -1,0 +1,30 @@
+field_mappings:
+  nama_pelanggan:
+    keywords: ["nama", "perusahaan", "pt ", "cv ", "tbk"]
+    region_types: ["text", "paragraph_title"]
+    validation_pattern: "^[A-Za-z0-9\\s\\.,]+$"
+    
+  alamat:
+    keywords: ["alamat", "address", "jalan", "jl."]
+    region_types: ["text"]
+    validation_pattern: "^[A-Za-z0-9\\s\\.,\\-\\/]+$"
+    
+  npwp:
+    keywords: ["npwp", "tax"]
+    region_types: ["text"]
+    validation_pattern: "^\\d{15}$"
+    
+  nomor_kontrak:
+    keywords: ["nomor kontrak", "contract number", "k.tel"]
+    region_types: ["text", "paragraph_title"]
+    validation_pattern: "^[A-Za-z0-9\\.\\/\\-]+$"
+
+text_processing:
+  common_corrections:
+    "tcikom": "telkom"
+    "teikom": "telkom"
+
+confidence_thresholds:
+  high: 0.8
+  medium: 0.6
+  low: 0.4

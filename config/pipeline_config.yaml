@@ -1,0 +1,59 @@
+pipeline_name: "TelkomContractExtractor"
+version: "1.0.0"
+
+# PP-StructureV3 Configuration (parameter yang valid)
+pp_structure:
+  # Text Recognition
+  text_recognition_model_name: "en_PP-OCRv4_mobile_rec"
+  text_recognition_batch_size: 4
+  text_rec_score_thresh: 0.5
+  
+  # Text Detection
+  text_detection_model_name: "PP-OCRv5_mobile_det"
+  text_det_limit_side_len: 960
+  text_det_thresh: 0.3
+  text_det_box_thresh: 0.6
+  
+  # Layout Detection
+  layout_detection_model_name: "PP-DocLayout-M"
+  layout_threshold: 0.4
+  
+  # Document Processing Options
+  use_doc_orientation_classify: true
+  use_doc_unwarping: false
+  use_textline_orientation: true
+  
+  # Table Recognition
+  use_table_recognition: true
+  
+  # Performance
+  enable_hpi: true
+  cpu_threads: 4
+  device: "cpu"
+
+# Data Extraction Configuration
+extraction:
+  target_fields:
+    - "nama_pelanggan"
+    - "alamat"
+    - "npwp"
+    - "nomor_kontrak"
+    - "jangka_waktu"
+    - "connectivity_telkom"
+    - "non_connectivity_telkom" 
+    - "bundling"
+    - "rincian_layanan_tabel"
+    - "tata_cara_pembayaran"
+    - "kontak_person_telkom"
+
+# Performance Settings
+performance:
+  processing_timeout: 300
+  max_memory_usage: 8192
+  batch_size: 1
+
+# Logging Configuration
+logging:
+  level: "DEBUG"
+  format: "{time:YYYY-MM-DD HH:mm:ss} | {level} | {message}"
+  file_path: "logs/telkom_extractor.log"

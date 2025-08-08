@@ -26,8 +26,6 @@ class PPStructureConfig:
     use_doc_unwarping: bool = False
     use_textline_orientation: bool = True
     use_table_recognition: bool = True
-    use_wireless_table_cells_trans_to_html: bool = True
-    use_table_orientation_classify: bool = True
     enable_hpi: bool = True
     cpu_threads: int = 4
     device: str = "cpu"
@@ -146,8 +144,6 @@ class ConfigManager:
             'use_doc_unwarping': config.use_doc_unwarping,
             'use_textline_orientation': config.use_textline_orientation,
             'use_table_recognition': config.use_table_recognition,
-            'use_wireless_table_cells_trans_to_html': config.use_wireless_table_cells_trans_to_html,
-            'use_table_orientation_classify': config.use_table_orientation_classify,
             'enable_hpi': config.enable_hpi,
             'cpu_threads': config.cpu_threads,
             'device': config.device
