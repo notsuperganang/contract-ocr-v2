@@ -4,11 +4,16 @@ Integrates all components for end-to-end contract data extraction
 """
 
 import time
+import re
 from pathlib import Path
 from typing import List, Dict, Any, Optional, Union
 import numpy as np
 
-from paddleocr import PPStructureV3
+try:
+    from paddleocr import PPStructureV3
+except ImportError:
+    print("PaddleOCR not found. Please install it with: pip install paddleocr")
+    raise
 
 from ..models.data_models import (
     TelkomContractData, ExtractedField, ExtractionStatus, 
