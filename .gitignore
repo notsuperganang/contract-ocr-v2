@@ -1,0 +1,448 @@
+# =================================================================
+# Telkom Contract Extractor - .gitignore
+# =================================================================
+
+# =================================================================
+# Python
+# =================================================================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
+#   However, in case of collaboration, if having platform-specific dependencies or dependencies
+#   having no cross-platform support, pipenv may install dependencies that don't work, or not
+#   install all needed dependencies.
+#Pipfile.lock
+
+# PEP 582; used by e.g. github.com/David-OConnor/pyflow
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# =================================================================
+# Conda Environment
+# =================================================================
+
+# Conda environments
+conda-meta/
+*.conda
+*.tar.bz2
+
+# Conda-pack
+*.tar.gz
+
+# =================================================================
+# AI/ML Models & Data
+# =================================================================
+
+# Large model files
+models/*.pt
+models/*.pth
+models/*.onnx
+models/*.pb
+models/*.h5
+models/*.hdf5
+models/*.pkl
+models/*.pickle
+models/*.bin
+models/*.safetensors
+
+# Model cache directories
+models/cache/
+models/downloads/
+models/pretrained/
+
+# PaddleOCR model cache
+.paddlex/
+~/.paddlex/
+
+# Ultralytics cache
+.ultralytics/
+~/.ultralytics/
+
+# Hugging Face cache
+.cache/huggingface/
+~/.cache/huggingface/
+
+# =================================================================
+# Project Specific
+# =================================================================
+
+# Temporary files and processing outputs
+temp/
+tmp/
+temporary/
+
+# Output directories
+output/logs/*.log
+output/debug/*
+output/results/*
+!output/logs/.gitkeep
+!output/debug/.gitkeep
+!output/results/.gitkeep
+
+# Processed images and PDFs
+output/images/
+output/pdf_pages/
+
+# Test outputs
+tests/temp/
+tests/output/
+
+# =================================================================
+# PDF Files (except sample contracts)
+# =================================================================
+
+# All files in pdf directory
+pdf/
+
+# All PDF files in root (but allow in specific directories)
+/*.pdf
+
+# Large PDF files anywhere
+**/large_*.pdf
+**/test_*.pdf
+**/sample_*.pdf
+
+# =================================================================
+# Development & Editor
+# =================================================================
+
+# VSCode
+.vscode/
+!.vscode/settings.json.example
+!.vscode/launch.json.example
+
+# PyCharm
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# =================================================================
+# OS Generated
+# =================================================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+
+# Dump file
+*.stackdump
+
+# Folder config file
+[Dd]esktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+# Linux
+*~
+
+# temporary files which can be created if a process still has a handle open of a deleted file
+.fuse_hidden*
+
+# KDE directory preferences
+.directory
+
+# Linux trash folder which might appear on any partition or disk
+.Trash-*
+
+# .nfs files are created when an open file is removed but is still being accessed
+.nfs*
+
+# =================================================================
+# Logs and Monitoring
+# =================================================================
+
+# Application logs
+*.log
+logs/
+log/
+
+# But keep empty log directories
+!logs/.gitkeep
+!log/.gitkeep
+
+# Monitoring and profiling
+*.prof
+*.profile
+
+# =================================================================
+# Security & Credentials
+# =================================================================
+
+# API keys and secrets
+.env
+.env.local
+.env.*.local
+secrets.json
+credentials.json
+api_keys.txt
+
+# SSH keys
+id_rsa
+id_rsa.pub
+*.pem
+*.key
+
+# =================================================================
+# Performance & Debugging
+# =================================================================
+
+# Memory dumps
+*.dmp
+
+# Performance monitoring
+*.perf
+
+# Debug files
+debug/
+debug.log
+trace.log
+
+# =================================================================
+# Backup Files
+# =================================================================
+
+# Backup files
+*.bak
+*.backup
+*.old
+*.orig
+*.tmp
+
+# Archive files
+*.zip
+*.tar
+*.tar.gz
+*.tar.bz2
+*.rar
+*.7z
+
+# =================================================================
+# Package managers
+# =================================================================
+
+# npm (if using any Node.js tools)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# =================================================================
+# Allow Important Files
+# =================================================================
+
+# Force include important config files
+!config/*.yaml
+!config/*.yml
+!config/*.json
+
+# Force include requirements
+!requirements*.txt
+
+# Force include documentation
+!README.md
+!CHANGELOG.md
+!LICENSE
+!docs/**
+
+# Force include sample files for testing
+!tests/sample_contracts/.gitkeep
+!tests/expected_outputs/.gitkeep
+
+# Force include empty directories
+!**/.gitkeep
+
+# =================================================================
+# Project Documentation
+# =================================================================
+
+# Documentation builds
+docs/_build/
+docs/build/
+
+# Sphinx
+docs/source/_build/
+
+# =================================================================
+# Custom Ignores (Add project-specific items below)
+# =================================================================
+
+# Add any additional project-specific ignores here...
