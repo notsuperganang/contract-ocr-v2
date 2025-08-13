@@ -444,5 +444,6 @@ docs/source/_build/
 # =================================================================
 # Custom Ignores (Add project-specific items below)
 # =================================================================
-
-# Add any additional project-specific ignores here...
+project-brief.txt
+BEST-PRACTICE.md
+CLAUDE.md

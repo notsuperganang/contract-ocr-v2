@@ -3,7 +3,7 @@ Text postprocessor for Telkom Contract Extractor
 Handles Indonesian text corrections and data cleaning
 """
 
-import re
+import re  # ← FIX: Add missing import at the top
 from typing import Dict, List, Optional, Tuple
 from datetime import datetime
 

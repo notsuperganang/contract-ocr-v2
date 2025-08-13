@@ -4,7 +4,7 @@ Integrates all components for end-to-end contract data extraction
 """
 
 import time
-import re
+import re  # ← FIX: Add missing import
 from pathlib import Path
 from typing import List, Dict, Any, Optional, Union
 import numpy as np
@@ -268,7 +268,7 @@ class TelkomContractExtractor:
             ]
             
             for pattern in patterns:
-                import re
+                # ← FIX: Remove local import re
                 match = re.search(pattern, text, re.IGNORECASE)
                 if match:
                     candidate = match.group(1).strip()
@@ -288,7 +288,7 @@ class TelkomContractExtractor:
     
     def _clean_field_candidate(self, candidate: str, field_name: str) -> str:
         """Clean field candidate value"""
-        import re
+        # ← FIX: Remove local import re
         
         # Remove common OCR artifacts
         candidate = re.sub(r'[|\\]', '', candidate)
@@ -315,14 +315,13 @@ class TelkomContractExtractor:
         # Check validation pattern if provided
         validation_pattern = field_config.get('validation_pattern')
         if validation_pattern:
-            import re
+            # ← FIX: Remove local import re
             if not re.match(validation_pattern, candidate):
                 return False
         
         # Field-specific validation
         if field_name == "npwp":
             # NPWP should have 15 digits
-            import re
             digits = re.sub(r'\D', '', candidate)
             return len(digits) == 15
         elif field_name == "nomor_kontrak":
@@ -338,7 +337,7 @@ class TelkomContractExtractor:
         # Boost confidence if value matches validation pattern
         validation_pattern = field_config.get('validation_pattern')
         if validation_pattern:
-            import re
+            # ← FIX: Remove local import re
             if re.match(validation_pattern, value):
                 base_confidence += 0.3
         
